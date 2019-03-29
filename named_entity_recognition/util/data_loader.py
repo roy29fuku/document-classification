@@ -14,8 +14,6 @@ def load_sentences():
     https://qiita.com/tatsuya-miyamoto/items/f505dfa8d5307f8c6e98
     :return:
     """
-    print('hoge')
-    print(os.getcwd())
     X_train, y_train = load_conll2003_sentences(TRAIN_FILE_PATH)
     X_valid, y_valid = load_conll2003_sentences(VALID_FILE_PATH)
     X_test, y_test = load_conll2003_sentences(TEST_FILE_PATH)
