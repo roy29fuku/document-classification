@@ -1,9 +1,9 @@
 import os
 
-dir_path = os.path.dirname(__file__)
-TRAIN_FILE_PATH = os.path.join(dir_path, '../data/eng.train')
-VALID_FILE_PATH = os.path.join(dir_path, '../data/eng.testa')
-TEST_FILE_PATH = os.path.join(dir_path, '../data/eng.testb')
+DATA_DIR = os.path.join(os.path.dirname(__file__), '../../data/conll_2003/')
+TRAIN_FILE_PATH = os.path.join(DATA_DIR, 'eng.train')
+VALID_FILE_PATH = os.path.join(DATA_DIR, 'eng.testa')
+TEST_FILE_PATH = os.path.join(DATA_DIR, 'eng.testb')
 
 
 def load_sentences():
