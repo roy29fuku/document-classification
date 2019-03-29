@@ -1,13 +1,14 @@
 import nltk
 import numpy as np
-from tqdm import tqdm
-from copy import deepcopy
 import re
+from .util import data
+
 
 # BOS, EOS, UNKを設定
 BOS = '<BOS>'
 EOS = '<EOS>'
 UNK = '<UNK>'
+
 
 def _get_unk_words_replaced_corpus(corpus):
     """
@@ -15,6 +16,7 @@ def _get_unk_words_replaced_corpus(corpus):
     """
     unk_words = _get_unk_words(corpus)
     return [[(wt[0], wt[1]) if wt[0] not in unk_words else (UNK, wt[1]) for wt in s] for s in corpus]
+
 
 def _get_unk_words(corpus, num=1):
     """
@@ -73,3 +75,7 @@ def _get_freq(count_matrix):
         freq_matrix[i] = freq_row
 
     return freq_matrix
+
+
+if __name__ == '__main__':
+    X_train, y_train, X_valid, y_valid, X_test, y_test = data.load_sentences()
