@@ -1,8 +1,7 @@
 import nltk
 import numpy as np
 import re
-from .util import data
-
+from util import data_loader
 
 # BOS, EOS, UNKを設定
 BOS = '<BOS>'
@@ -78,4 +77,5 @@ def _get_freq(count_matrix):
 
 
 if __name__ == '__main__':
-    X_train, y_train, X_valid, y_valid, X_test, y_test = data.load_sentences()
+    X_train, y_train, X_valid, y_valid, X_test, y_test = data_loader.load_sentences()
+    print(X_test[0])

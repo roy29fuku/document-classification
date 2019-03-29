@@ -1,6 +1,9 @@
-TRAIN_FILE_PATH = 'eng.train'
-VALID_FILE_PATH = 'eng.testa'
-TEST_FILE_PATH = 'eng.testb'
+import os
+
+dir_path = os.path.dirname(__file__)
+TRAIN_FILE_PATH = os.path.join(dir_path, '../data/eng.train')
+VALID_FILE_PATH = os.path.join(dir_path, '../data/eng.testa')
+TEST_FILE_PATH = os.path.join(dir_path, '../data/eng.testb')
 
 
 def load_sentences():
@@ -11,6 +14,8 @@ def load_sentences():
     https://qiita.com/tatsuya-miyamoto/items/f505dfa8d5307f8c6e98
     :return:
     """
+    print('hoge')
+    print(os.getcwd())
     X_train, y_train = load_conll2003_sentences(TRAIN_FILE_PATH)
     X_valid, y_valid = load_conll2003_sentences(VALID_FILE_PATH)
     X_test, y_test = load_conll2003_sentences(TEST_FILE_PATH)
@@ -34,12 +39,14 @@ def load_conll2003_sentences(file_path):
                 continue
 
             if line:
-                word, _, _, ner_label = line.strip()
+                word, _, _, ner_label = line.split()
                 sentence.append(word)
                 label.append(ner_label)
             else:
+                if not sentence:
+                    continue
                 sentences.append(sentence)
                 labels.append(label)
-                sentences, labels = [], []
+                sentence, label = [], []
 
     return sentences, labels

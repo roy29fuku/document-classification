@@ -1,4 +1,4 @@
-from .data import load_sentences
+from .data_loader import load_sentences
 
 
 if __name__ == '__main__':
