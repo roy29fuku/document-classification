@@ -1,1 +1,2 @@
-[Browse state-of-the-art](https://paperswithcode.com/sota)
+- [acl-web, State of the art](https://aclweb.org/aclwiki/State_of_the_art)
+- [Papers with Code, Browse state-of-the-art](https://paperswithcode.com/sota)
