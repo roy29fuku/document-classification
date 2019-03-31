@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 def load_penn_treebank_data(train_size=0.7):
     sents = nltk.corpus.treebank.tagged_sents()
     sents = [np.array(s).transpose() for s in sents]
-    train_data, test_data = train_test_split(sents, train_size=train_size)
+    train_data, test_data = train_test_split(sents, train_size=train_size, test_size=1-train_size)
     print('train size: {}'.format(len(train_data)))
     print('test size: {}'.format(len(test_data)))
     return train_data, test_data
