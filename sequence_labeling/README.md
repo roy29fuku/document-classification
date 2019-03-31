@@ -7,3 +7,4 @@
 - [PyTorch, text, Github](https://github.com/pytorch/text)
 - [claravania, lstm-pytorch, GitHub](https://github.com/claravania/lstm-pytorch)
 - [sgrvinod, a-PyTorch-Tutorial-to-Sequence-Labeling, GitHub](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Sequence-Labeling)
+- [ZhixiuYe, NER-pytorch, Github](https://github.com/ZhixiuYe/NER-pytorch)
