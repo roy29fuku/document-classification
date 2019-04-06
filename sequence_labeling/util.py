@@ -7,6 +7,9 @@ UNK = 0
 def get_conversion_tables(train_data, min_count=1):
     # TODO: count words and
 
+    char_to_ix = {
+        UNK_TOKEN: UNK
+    }
     word_to_ix = {
         UNK_TOKEN: UNK
     }
@@ -18,8 +21,11 @@ def get_conversion_tables(train_data, min_count=1):
                 word_to_ix[word] = len(word_to_ix)
             if tag not in tag_to_ix:
                 tag_to_ix[tag] = len(tag_to_ix)
+            for char in word:
+                if char not in char_to_ix:
+                    char_to_ix[char] = len(char_to_ix)
 
-    return word_to_ix, tag_to_ix
+    return char_to_ix, word_to_ix, tag_to_ix
 
 
 def prepare_sequence(seq, to_ix):
